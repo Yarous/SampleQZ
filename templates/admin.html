@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename=theme) }}">
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <title>Админ-панель</title>
+</head>
+<body>
+    <h1>Админ-панель</h1>
+    <form method="post">
+        <select name="theme">
+            <option value="theme1.css">Тема 1</option>
+            <option value="theme2.css">Тема 2</option>
+        </select>
+        <button type="submit">Обновить тему</button>
+    </form>
+</body>
+<script src="theme-switcher.js"></script>
+</html>

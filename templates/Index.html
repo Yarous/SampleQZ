@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SampleQZ</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/made-soulmaze" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="static/Style.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+
+</head>
+<body class="light-theme">
+
+<header>
+    <!-- Bootstrap навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <h1 class="logotexto inline">name</h1>
+                <h1 class="logotexts inline">subname</h1>
+            </a>
+            <!-- Остальной код скрипта на JavaScript -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link" href="/tests">Тесты</a>
+                    <a class="nav-link" href="/about">О нас</a>
+                    {% if not is_authenticated %}
+                    <a class="nav-link" href="/register">Зарегистрироваться</a>
+                    <a class="nav-link" href="/login">Войти</a>
+                    {% else %}
+                    <a class="nav-link" href="/profile">Профиль</a>
+                    {% endif %}
+                    <!--переключение тем-->
+                    <button id="theme-toggler" class="nav-link btn btn-link" aria-label="Переключить тему" style="margin-top: auto; margin-bottom: auto;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="icon-moon" viewBox="0 0 16 16" style="vertical-align: middle;">
+                            <path d="M16 8a8 8 0 1 1-11.314-5.874 7.97 7.97 0 0 1 4.72 4.721A7 7 0 0 0 16 8z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<h1>Главная страница</h1>
+
+<footer class="footer bg-success py-3">
+    <div class="container">
+        <span>footer text</span>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+<script>// scripts.js
+$(document).ready(function() {
+    $('.content-wrapper').fadeIn(1000);
+});
+</script>
+
+<!-- Подключаем Bootstrap JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.1.9/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doMkKqN5JWi1toQdP5VTp0oGdjl5jBP4epzj1K9phqgwwHJT6/7P4ps" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+JS80GB+8llPCS7lxIHE2eN4HaojKE3agorz" crossorigin="anonymous"></script>
+<script src="static/JS/theme-switcher.js"></script>
+</body>
+</html>
