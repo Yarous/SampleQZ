@@ -6,17 +6,16 @@
 <meta content='width=device-width, initial-scale=1' name='viewport'/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link href="../Css/Style.css" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/made-soulmaze" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <link rel="stylesheet" href="static/Style.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+
 </head>
 <body>
 
@@ -57,6 +56,11 @@
                     {% else %}
                     <a class="nav-link" href="/profile">Профиль</a>
                     {% endif %}
+                    <button id="theme-toggler" class="nav-link btn btn-link" aria-label="Переключить тему" style="margin-top: auto; margin-bottom: auto;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="icon-moon" viewBox="0 0 16 16" style="vertical-align: middle;">
+                            <path d="M16 8a8 8 0 1 1-11.314-5.874 7.97 7.97 0 0 1 4.72 4.721A7 7 0 0 0 16 8z"/>
+                        </svg>
+                    </button>
                 </div>
 
             </div>
@@ -68,35 +72,25 @@
 <div class="modal modal-sheet d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSheet">
   <div class="modal-dialog" role="document">
     <div class="modal-content rounded-4 shadow">
-      <div class="modal-header border-bottom-0">
-        <h1 class="modal-title fs-5">Баллы за тесты</h1>
-      </div>
-      <div class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
-		  <p>Баллы за тест по Python: </p>{{ pythtest }}<p></p>
-		  <p>Баллы за тест по JS: </p>{{ javastest }}<p></p>
-		  <p>Баллы за тест по Unity: </p>{{ unitygametest }}<p></p>
-        <a class="btn btn-lg btn-secondary" href="#">Закрыть</a>
-      </div>
+
     </div>
   </div>
 </div>
 </div>
-<div class="modal modal-sheet position-static d-block p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
-    <div class="modal-dialog" role="document", id="register">
+<div class="modal modal-sheet position-static d-block py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal-dialog" role="document" id="register">
         <div class="modal-content rounded-4 shadow d-flex justify-content-center align-items-center">
             <div class="modal-header p-5 pb-4 border-bottom-0">
                 <h1 class="fw-bold mb-0 fs-2">Профиль</h1>
             </div>
-        <div class="col-lg-6 about d-flex align-items-center" style="flex-direction:column;">
-            <img src="../static/images/user-svgrepo-com.svg" style="width: 80%;">
-            <h4 id="email" style="color: darkgray;">{{ user.email }}</h4>
-        </div>
-        
-            <a class="w-50 m-5 btn btn-lg p-3 btn-primary" href="#confrim">Результаты тестов</a>
+            <div class="col-lg-6 about d-flex align-items-center" style="flex-direction:column;">
+                <img src="{{ avatar_url }}" class="profile-avatar">
+                <h4 id="email" style="color: darkgray;">{{ user.email }}</h4>
+            </div>
             <a class="w-50 m-5 btn btn-lg p-3 btn-secondary" href="/logout">Выйти</a>
+        </div>
     </div>
-</div></div>
-
+</div>
 <footer class="footer bg-success py-3">
     <div class="container">
         <span>&copy; 2024 NExt team. <a href="https://github.com/vzgr/CodeQZ"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png", class="githublogo"></a></span>
@@ -116,6 +110,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.1.9/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doMkKqN5JWi1toQdP5VTp0oGdjl5jBP4epzj1K9phqgwwHJT6/7P4ps" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+JS80GB+8llPCS7lxIHE2eN4HaojKE3agorz" crossorigin="anonymous"></script>
-<script src="theme-switcher.js"></script>
+<script src="static/JS/theme-switcher.js"></script>
 </body>
 </html>

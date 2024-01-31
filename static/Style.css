@@ -9,6 +9,23 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+.btn-primary{
+  background: var(--accent);
+  border: none;
+  box-shadow: var(--input-shadow);
+  border-radius: 10px;
+}
+.profile-avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+}
+
+/* Стили для скрытого input'а, если требуется */
+input[type="file"] {
+  display: none;
+}
 /* Общие стили для кнопки */
 #theme-toggler {
   background: none;
